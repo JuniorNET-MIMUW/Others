@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="AngularApp">
+<head>
+    <title>First AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="todo.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+<div ng-controller="TodoController">
+    <hello-world></hello-world>
+    <ul class="list-unstyled" ng-repeat="todo in todoList">
+        <li><input type="checkbox" ng-model="todo.isCompleted"/>{{todo.name}}</li>
+    </ul>
+    <input type="text" ng-keydown="onKeyDown($event)" ng-model="input" />
+    <input type="button" value="Add" ng-click="add()"/>
+    <input type="button" value="Remove completed" ng-click="remove()"/>
+</div>
+</body>
+</html>

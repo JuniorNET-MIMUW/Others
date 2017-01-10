@@ -1,0 +1,17 @@
+﻿@model IEnumerable<string>
+    
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var name in Model)
+        {
+            <li><a href="/Repository/ViewFile?path=@name">@name</a></li>
+        }
+    </ul>
+}
+else
+{
+  <h2>Pusty folder</h2>
+}
+<br/>
+<a href="/Repository/Add">ADD</a>
